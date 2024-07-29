@@ -23,7 +23,7 @@ currency
           &times;
         </span>
         <h2> All ICO you have created</h2>
-        <div className="table-container">
+        <div className="">
           <table className="custom-table">
             <thead>
               <tr>

@@ -22,7 +22,7 @@ const WidthdrawToken = ({
         &times;
       </span>
       <h2>Withdraw Token </h2>
-      <div className="input-Container" style={{marginTop: "1rem"}}>
+      <div className="input-Container flex-col md:flex-row " style={{marginTop: "1rem"}}>
         <Input
         placeholder={"To Address"}
         handleChange={(e) => 

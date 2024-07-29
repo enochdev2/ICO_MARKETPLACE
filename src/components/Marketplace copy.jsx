@@ -27,7 +27,7 @@ const Marketplace = ({
   }
 
   return (
-    <div className="table-container gradiant-bg">
+    <div className="table-container gradiant-bg md:my-[50px] md:mx-[50px]">
     <table className="custom-table">
       <thead>
         <tr>

@@ -5,7 +5,7 @@ const Input = ({placeholder, handleChange}) => {
      <input type="text" 
      placeholder={placeholder}
      onChange={handleChange} 
-     className={"input-style"} 
+     className={"input-style "} 
      />
   </>)
 };

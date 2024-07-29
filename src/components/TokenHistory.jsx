@@ -32,7 +32,7 @@ const TokenHistory = ({
           &times;
         </span>
         <h2> Token History</h2>
-        <div className="table-container">
+        <div className="table-container md:my-[50px] md:mx-[50px]">
           <table className="custom-table">
             <thead>
               <tr>

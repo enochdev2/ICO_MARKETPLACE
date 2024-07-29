@@ -122,9 +122,9 @@ const [buyIco, setBuyIco] = useState()
     </div>
       
     <div id="icomarket" className="create">
-       <h1 style={{ 
-        fontSize: "2rem"
-        }}> All ICOs Marketplace</h1> 
+       <h1 className=" text-[1.7rem] md:text-[2rem]" style={{ 
+        
+        }}> All ICOs <span className="gradiant-bg text-transparent bg-clip-text font-bold">  Marketplace</span> </h1> 
         { 
           allICOs?.length != 0 && (
           <Marketplace 
