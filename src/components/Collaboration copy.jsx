@@ -10,14 +10,19 @@ const Collaboration = () => {
       <div className="container lg:flex">
         <div className="max-w-[30rem] text-left text-[#c2be99]">
           <h2 className="h1 mb-4 md:mb-8 bg-gradient-to-r from-[#FF0A6c] via-[#ffdf27] to-[#2D27ff] bg-clip-text text-transparent ">
-          Enoch ICO Marketplace
+            Enoch ICO Marketplace
           </h2>
 
           <ul className="max-w-[22rem] mb-10 md:mb-14">
             {collabContent.map((item) => (
               <li className="mb-3 py-3" key={item.id}>
                 <div className="flex items-center">
-                  <img src="/brainwave-symbol.svg" width={24} height={24} alt="check" />
+                  <img
+                    src="/brainwave-symbol.svg"
+                    width={24}
+                    height={24}
+                    alt="check"
+                  />
                   <h6 className="body-2 ml-5">{item.title}</h6>
                 </div>
                 {item.text && (
@@ -31,8 +36,6 @@ const Collaboration = () => {
         </div>
 
         <div className="lg:ml-auto xl:w-[38rem] mt-4">
-          
-
           <div className="relative left-1/2 flex w-[22rem] aspect-square border border-n-6 rounded-full -translate-x-1/2 scale:75 md:scale-100">
             <div className="flex w-60 aspect-square m-auto border border-n-6 rounded-full">
               <div className="w-[6rem] aspect-square m-auto p-[0.2rem] bg-conic-gradient rounded-full">

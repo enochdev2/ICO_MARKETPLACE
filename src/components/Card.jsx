@@ -1,14 +1,14 @@
 import React from "react";
 
 const Card = ({
-    setOpenAllICO, 
-    setOpenTokenCreator, 
-    setOpenTransferToken,
-    setOpenTokenHistory,
-    setOpenWithdrawToken,
-    setOpenICOMarketplace,
-    copyAddress,
-    setOpenCreateICO,
+  setOpenAllICO,
+  setOpenTokenCreator,
+  setOpenTransferToken,
+  setOpenTokenHistory,
+  setOpenWithdrawToken,
+  setOpenICOMarketplace,
+  copyAddress,
+  setOpenCreateICO,
 }) => {
   const features = [
     {
@@ -23,7 +23,7 @@ const Card = ({
         "Get Detail of ICO Contract and cpoy the ico contract address to transfer the token to ICO Contract",
       btnName: "Create ICO",
     },
-   
+
     // {
     //   title: "ICO Marketplace",
     //   description:
@@ -61,40 +61,55 @@ const Card = ({
       btnName: "Widthdraw Token",
     },
   ];
-  
+
   return (
     <>
-    <div className="flex justify-center flex-wrap">
-      {
-        features.map((feature, index) => (
-          <div key={index} className=" card max-w-[300px] min-h-[250px] bg-[#02b875] p-7 border-r ">
-            <p className="card-content" style={{
-              marginTop: "1rem"
-            }}>
+      <div className="flex justify-center flex-wrap">
+        {features.map((feature, index) => (
+          <div
+            key={index}
+            className=" card max-w-[300px] min-h-[250px] bg-[#02b875] p-7 border-r "
+          >
+            <p
+              className="card-content"
+              style={{
+                marginTop: "1rem",
+              }}
+            >
               {feature.description}
             </p>
-            <button className="card-btn"
-            style={{
-              marginTop: "1rem"
-            }}
-            onClick={()=> feature.title == "YourCreatedICO" ? setOpenAllICO(true)
-              : feature.title == "ICOMarketplaces" ? setOpenICOMarketplace(true)
-               : feature.title == "Create Token" ? setOpenTokenCreator(true) :
-              feature.title == "History" ? setOpenTokenHistory(true) :
-              feature.title == "Transfer Token" ? setOpenTransferToken(true) : 
-              feature.title == "withdraw Token" ? setOpenWithdrawToken(true) :
-              feature.title == "ICO ADDRESS" ? copyAddress() : feature.title == "Create ICO"
-              ? setOpenCreateICO(true) : ""
-            }
+            <button
+              className="card-btn"
+              style={{
+                marginTop: "1rem",
+              }}
+              onClick={() =>
+                feature.title == "YourCreatedICO"
+                  ? setOpenAllICO(true)
+                  : feature.title == "ICOMarketplaces"
+                  ? setOpenICOMarketplace(true)
+                  : feature.title == "Create Token"
+                  ? setOpenTokenCreator(true)
+                  : feature.title == "History"
+                  ? setOpenTokenHistory(true)
+                  : feature.title == "Transfer Token"
+                  ? setOpenTransferToken(true)
+                  : feature.title == "withdraw Token"
+                  ? setOpenWithdrawToken(true)
+                  : feature.title == "ICO ADDRESS"
+                  ? copyAddress()
+                  : feature.title == "Create ICO"
+                  ? setOpenCreateICO(true)
+                  : ""
+              }
             >
               {feature.btnName}
             </button>
           </div>
-        ))
-      }
-    </div>
+        ))}
+      </div>
     </>
-  )
+  );
 };
 
 export default Card;

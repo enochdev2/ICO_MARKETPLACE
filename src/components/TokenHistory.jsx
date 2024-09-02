@@ -1,21 +1,17 @@
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
-const TokenHistory = ({
-  shortenAddress,
-  setOpenTokenHistory
-}) => {
+const TokenHistory = ({ shortenAddress, setOpenTokenHistory }) => {
   // const [openTokenHistory, setOpenTokenHistory] = useState()
-  const notifySuccess = (msg) => toast.success(msg, {duration: 3000 });
-  const notifyError = (msg) => toast.error(msg, {duration: 3000 });
+  const notifySuccess = (msg) => toast.success(msg, { duration: 3000 });
+  const notifyError = (msg) => toast.error(msg, { duration: 3000 });
 
   const copyAddress = (text) => {
     navigator.clipboard.writeText(text);
     notifySuccess("Copied Successfully");
-  }
-  
+  };
 
-  const [history, setHistory] = useState([])
+  const [history, setHistory] = useState([]);
 
   useEffect(() => {
     const storedData = localStorage.getItem("TOKEN_HISTORY");
@@ -47,29 +43,33 @@ const TokenHistory = ({
             <tbody>
               {history?.map((token, index) => (
                 <tr key={index + 1}>
-                  <td onClick={()=> navigator.clipboard.writeText(token?.logo)}>
-                    <img src={token?.logo || "schoolofdapp.com.ng"} alt="" 
-                    style={{
-                      width: "30px",
-                      height: "auto",
-                      borderRadius: "10px"
-                    }}
-/>
+                  <td
+                    onClick={() => navigator.clipboard.writeText(token?.logo)}
+                  >
+                    <img
+                      src={token?.logo || "schoolofdapp.com.ng"}
+                      alt=""
+                      style={{
+                        width: "30px",
+                        height: "auto",
+                        borderRadius: "10px",
+                      }}
+                    />
                   </td>
                   <td>{token?.name}</td>
                   <td>{token?.symbol}</td>
                   <td>{token?.supply}</td>
-                  <td onClick={ () =>
-                    copyAddress(token?.tokenAddress)
-                  }>
+                  <td onClick={() => copyAddress(token?.tokenAddress)}>
                     {shortenAddress(token?.tokenAddress)}
                     {/* {token?.tokenAddress} */}
-                </td>
-                  <td onClick={ () => {
-                    copyAddress(token?.transactionHash)
-                  }}>
+                  </td>
+                  <td
+                    onClick={() => {
+                      copyAddress(token?.transactionHash);
+                    }}
+                  >
                     {shortenAddress(token?.transactionHash)}
-                </td>
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -77,7 +77,7 @@ const TokenHistory = ({
         </div>
       </div>
     </div>
-  )
+  );
 };
 
 export default TokenHistory;
